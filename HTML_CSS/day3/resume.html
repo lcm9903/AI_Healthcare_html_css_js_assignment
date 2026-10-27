@@ -23,3 +23,122 @@
                     <li><a href="#intro">Intro</a></li>
                     <li><a href="#hobby">Hobby</a></li>
                     <li><a href="#career">Career</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===== Self Introduction ===== -->
+        <section id="intro" class="section">
+            <h1>Self Introduction.</h1>
+            <hr>
+            <div class="intro-wrap">
+                <img src="profile.jpg" alt="이채민 프로필 사진" class="profile-img">
+                <div class="intro-text">
+                    <p class="greeting">안녕하세요, 궁금한 건 직접 돌려봐야 직성이 풀리는 <strong>이채민</strong>입니다!</p>
+                    <ul class="info-list">
+                        <li><span>이름</span>이채민</li>
+                        <li><span>학력</span>인하대학교 생명과학과 졸업</li>
+                        <li><span>MBTI</span>ISTP</li>
+                        <li><span>관심 분야</span>Medical AI, Computer Vision, LLM</li>
+                    </ul>
+                    <div class="btn-group">
+                        <a href="https://github.com/lcm9903" target="_blank" class="btn btn-fill">내 Repository 바로가기</a>
+                        <a href="https://velog.io/@lcm9903/posts" target="_blank" class="btn">Blog</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Hobby & Preference ===== -->
+        <section id="hobby" class="section">
+            <h1>Hobby &amp; Preference</h1>
+            <hr>
+            <ol class="hobby-list">
+                <li class="hobby-card">
+                    <span class="emoji">🎬</span>
+                    <h3>취미</h3>
+                    <p>영화 보기</p>
+                </li>
+                <li class="hobby-card">
+                    <span class="emoji">🏊‍♀️</span>
+                    <h3>특기</h3>
+                    <p>수영하기</p>
+                </li>
+                <li class="hobby-card">
+                    <span class="emoji">🔍</span>
+                    <h3>좋아하는 일</h3>
+                    <p>모델 결과를 의심하고 데이터 뜯어보기</p>
+                </li>
+                <li class="hobby-card">
+                    <span class="emoji">💪</span>
+                    <h3>마음가짐</h3>
+                    <p>잘 놀고, 그만큼 잘 일하자!</p>
+                </li>
+                <li class="hobby-card">
+                    <span class="emoji">🏥</span>
+                    <h3>목표</h3>
+                    <p>병원에서 "이거 진짜 쓸 만하네" 소리 듣는 헬스케어 AI 만들기</p>
+                </li>
+            </ol>
+        </section>
+
+        <!-- ===== Career & Work Experience ===== -->
+        <section id="career" class="section">
+            <h1>Career &amp; Work Experience</h1>
+            <hr>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>기관</th>
+                            <th>역할</th>
+                            <th>기간</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>오즈코딩스쿨 AI 헬스케어 7기</td>
+                            <td>수강생</td>
+                            <td>2026</td>
+                        </tr>
+                        <tr>
+                            <td>인하대학교 의과대학 뇌질환연구실</td>
+                            <td>학부연구생</td>
+                            <td>2025.01~2025.08</td>
+                        </tr>
+                        <tr>
+                            <td>인하대학교 생명과학과 노화연구실</td>
+                            <td>학부연구생</td>
+                            <td>2021.01~2021.06</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ===== Send Cover Letter ===== -->
+        <section id="contact" class="section">
+            <h1>Send Cover Letter</h1>
+            <hr>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="email">담당자 이메일</label>
+                    <input type="email" id="email" name="email" placeholder="email@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="company">회사명</label>
+                    <input type="text" id="company" name="company" placeholder="(주)Paper Company" required>
+                </div>
+                <button type="submit">이력서 전송하기</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 Lee Chae Min · <a href="https://github.com/lcm9903" target="_blank">GitHub</a></p>
+    </footer>
+</body>
+</html>
