@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실시간 암호화폐 시세</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app">
+        <!-- 헤더 -->
+        <header class="app-header">
+            <div>
+                <h1>실시간 암호화폐 시세</h1>
+                <p class="subtitle">Binance USDT 마켓 · 1초마다 업데이트</p>
+            </div>
+            <div class="status">
+                <span id="status-dot" class="dot"></span>
+                <span id="status-text">연결 중...</span>
+            </div>
+        </header>
+
+        <!-- 탭 + 검색 -->
+        <div class="toolbar">
+            <div class="tabs" role="tablist">
+                <button class="tab active" data-tab="all" role="tab">
+                    전체보기 <span id="count-all" class="count">0</span>
+                </button>
+                <button class="tab" data-tab="favorites" role="tab">
+                    관심항목 <span id="count-fav" class="count">0</span>
+                </button>
+            </div>
+            <input type="search" id="search" class="search"
+                   placeholder="코인 검색 (예: BTC, ETH)" autocomplete="off">
+        </div>
+
+        <!-- 시세 표 -->
+        <div class="table-wrap">
+            <table class="coin-table">
+                <thead>
+                    <tr>
+                        <th class="col-star"></th>
+                        <th class="col-name">코인</th>
+                        <th class="col-num">현재가 (USDT)</th>
+                        <th class="col-num">24h 변동률</th>
+                        <th class="col-num hide-mobile">24h 고가</th>
+                        <th class="col-num hide-mobile">24h 저가</th>
+                        <th class="col-num hide-tablet">거래대금 (USDT)</th>
+                    </tr>
+                </thead>
+                <tbody id="coin-list"></tbody>
+            </table>
+            <p id="empty-message" class="empty hidden"></p>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

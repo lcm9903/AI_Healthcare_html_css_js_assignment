@@ -1,0 +1,282 @@
+/* =========================================
+   1. 기본 설정
+   ========================================= */
+:root {
+    --bg: #0f1419;
+    --panel: #181f27;
+    --panel-2: #1f2832;
+    --line: #2a3441;
+    --text: #e6e9ee;
+    --text-sub: #8b96a5;
+    --up: #f6465d;       /* 상승: 빨강 (국내 거래소 기준) */
+    --down: #2e7dff;     /* 하락: 파랑 */
+    --accent: #f0b90b;   /* 바이낸스 노랑 */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+.app {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 20px;
+}
+
+/* =========================================
+   2. 헤더
+   ========================================= */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+h1 {
+    font-size: 26px;
+}
+
+.subtitle {
+    color: var(--text-sub);
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-sub);
+    white-space: nowrap;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--text-sub);
+}
+
+.dot.live {
+    background-color: #0ecb81;
+    box-shadow: 0 0 0 0 rgba(14, 203, 129, 0.6);
+    animation: pulse 1.5s infinite;
+}
+
+.dot.error {
+    background-color: var(--up);
+}
+
+@keyframes pulse {
+    70%  { box-shadow: 0 0 0 8px rgba(14, 203, 129, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(14, 203, 129, 0); }
+}
+
+/* =========================================
+   3. 탭 + 검색
+   ========================================= */
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.tabs {
+    display: flex;
+    gap: 4px;
+    padding: 4px;
+    background-color: var(--panel);
+    border-radius: 10px;
+}
+
+.tab {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-sub);
+    background: none;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.tab.active {
+    background-color: var(--panel-2);
+    color: var(--text);
+}
+
+.count {
+    padding: 0 8px;
+    font-size: 12px;
+    border-radius: 999px;
+    background-color: var(--line);
+}
+
+.tab.active .count {
+    background-color: var(--accent);
+    color: #000;
+}
+
+.search {
+    width: 280px;
+    padding: 10px 14px;
+    font-size: 15px;
+    color: var(--text);
+    background-color: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+}
+
+.search:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+/* =========================================
+   4. 시세 표
+   ========================================= */
+.table-wrap {
+    background-color: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.coin-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-variant-numeric: tabular-nums;  /* 숫자 폭을 같게 → 가격이 바뀌어도 흔들리지 않음 */
+}
+
+.coin-table th {
+    position: sticky;
+    top: 0;
+    padding: 12px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-sub);
+    text-align: left;
+    background-color: var(--panel-2);
+}
+
+.coin-table td {
+    padding: 12px 14px;
+    font-size: 15px;
+    border-top: 1px solid var(--line);
+}
+
+.coin-table tbody tr:hover {
+    background-color: var(--panel-2);
+}
+
+.col-num {
+    text-align: right !important;
+}
+
+.col-star {
+    width: 44px;
+}
+
+.symbol {
+    font-weight: 700;
+}
+
+.quote {
+    color: var(--text-sub);
+    font-size: 12px;
+    margin-left: 2px;
+}
+
+.up   { color: var(--up); }
+.down { color: var(--down); }
+
+/* 관심항목 별 버튼 */
+.star {
+    font-size: 18px;
+    line-height: 1;
+    color: var(--line);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.15s, color 0.15s;
+}
+
+.star:hover {
+    transform: scale(1.2);
+    color: var(--text-sub);
+}
+
+.star.on {
+    color: var(--accent);
+}
+
+/* 가격이 바뀐 순간 잠깐 배경 깜빡임 */
+.flash-up   { animation: flashUp 0.6s; }
+.flash-down { animation: flashDown 0.6s; }
+
+@keyframes flashUp {
+    from { background-color: rgba(246, 70, 93, 0.25); }
+    to   { background-color: transparent; }
+}
+
+@keyframes flashDown {
+    from { background-color: rgba(46, 125, 255, 0.25); }
+    to   { background-color: transparent; }
+}
+
+.hidden {
+    display: none !important;
+}
+
+.empty {
+    padding: 48px 20px;
+    text-align: center;
+    color: var(--text-sub);
+}
+
+/* =========================================
+   5. 반응형
+   ========================================= */
+@media (max-width: 900px) {
+    .hide-tablet { display: none; }
+}
+
+@media (max-width: 640px) {
+    .app {
+        padding: 20px 12px;
+    }
+
+    .app-header,
+    .toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search {
+        width: 100%;
+    }
+
+    .hide-mobile { display: none; }
+
+    .coin-table th,
+    .coin-table td {
+        padding: 10px 8px;
+        font-size: 14px;
+    }
+}
