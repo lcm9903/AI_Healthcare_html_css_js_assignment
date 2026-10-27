@@ -1,0 +1,346 @@
+/* =========================================
+   1. 기본 설정 (Bootstrap 위에 덮어쓰기)
+   ========================================= */
+:root {
+    --main: #2f5d8a;
+    --main-dark: #234a6f;
+    --main-light: #e8f0f7;
+    --line: #e2e5ea;
+}
+
+html {
+    scroll-padding-top: 72px;           /* fixed navbar에 제목이 가리지 않게 */
+}
+
+body {
+    font-family: "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    color: #222;
+    background-color: #fff;
+}
+
+/* =========================================
+   2. Navbar
+   ========================================= */
+.logo {
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--main) !important;
+}
+
+.navbar .nav-link {
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 6px 14px !important;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {          /* scrollspy가 현재 섹션 메뉴에 active 추가 */
+    color: var(--main) !important;
+    background-color: var(--main-light);
+}
+
+/* =========================================
+   3. 공통 섹션 · 버튼 · 배지
+   ========================================= */
+.section {
+    padding: 80px 0;
+}
+
+.section-alt {
+    background-color: #f7f8fa;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--main);
+    padding-bottom: 10px;
+    margin-bottom: 32px;
+    border-bottom: 2px solid var(--main);
+}
+
+.btn-main {
+    background-color: var(--main);
+    border-color: var(--main);
+    color: #fff;
+    font-weight: 700;
+}
+
+.btn-main:hover {
+    background-color: var(--main-dark);
+    border-color: var(--main-dark);
+    color: #fff;
+}
+
+.btn-outline-main {
+    border: 2px solid var(--main);
+    color: var(--main);
+    font-weight: 700;
+}
+
+.btn-outline-main:hover {
+    background-color: var(--main);
+    color: #fff;
+}
+
+.badge-main {
+    background-color: var(--main-light);
+    color: var(--main);
+    font-weight: 600;
+}
+
+/* =========================================
+   4. Hero (자기소개)
+   ========================================= */
+.hero {
+    padding-top: 140px;                 /* fixed navbar 높이만큼 여유 */
+    background: linear-gradient(180deg, var(--main-light) 0%, #fff 100%);
+}
+
+.profile-img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background-color: var(--main-light);
+}
+
+.eyebrow {
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--main);
+    margin-bottom: 8px;
+}
+
+.hero-title {
+    font-size: 2.6rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 16px;
+}
+
+.hero-title strong {
+    color: var(--main);
+}
+
+/* =========================================
+   5. Skills — CSS Grid (auto-fit)
+   ========================================= */
+.skill-grid {
+    display: grid;
+    /* 카드 최소 300px, 화면 폭에 맞춰 열 개수가 자동으로 바뀜 (3열 → 2열 → 1열) */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.skill-card {
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.skill-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.07);
+}
+
+.skill-card .card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--main);
+}
+
+.skill-card .card-text {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* =========================================
+   6. Hobby — CSS Grid (grid-template-areas)
+   ========================================= */
+.hobby-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.4fr;
+    /* 같은 이름은 반드시 직사각형이어야 함 → goal이 오른쪽 2행을 세로로 차지 */
+    grid-template-areas:
+        "movie swim goal"
+        "like  mind goal";
+    gap: 16px;
+}
+
+.movie { grid-area: movie; }
+.swim  { grid-area: swim; }
+.goal  { grid-area: goal; }
+.like  { grid-area: like; }
+.mind  { grid-area: mind; }
+
+.hobby-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 28px 20px;
+    background-color: #fff;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+}
+
+.hobby-item .emoji {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.hobby-item h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--main);
+    margin-bottom: 4px;
+}
+
+.hobby-item p {
+    margin: 0;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* 목표 카드는 크게, 강조 색으로 */
+.goal {
+    background-color: var(--main);
+    border-color: var(--main);
+}
+
+.goal h3,
+.goal p {
+    color: #fff;
+}
+
+.goal p {
+    font-size: 1.15rem;
+    max-width: 280px;
+}
+
+/* =========================================
+   7. Career 표
+   ========================================= */
+.career-table {
+    border: 1px solid var(--line);
+    border-radius: 16px;
+}
+
+.career-table thead th {
+    background-color: var(--main);
+    color: #fff;
+    padding: 14px 20px;
+}
+
+.career-table td {
+    padding: 14px 20px;
+}
+
+/* =========================================
+   8. Projects
+   ========================================= */
+.project-card {
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.07);
+}
+
+.project-card .card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.project-card .card-text {
+    color: #666;
+}
+
+.project-card .card-footer {
+    background-color: transparent;
+    font-size: 0.85rem;
+    color: var(--main);
+    font-weight: 600;
+}
+
+/* =========================================
+   9. Contact 폼
+   ========================================= */
+.contact-form {
+    padding: 28px 16px;
+    margin: 0;
+    background-color: #f7f8fa;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+}
+
+.contact-form .form-label {
+    font-weight: 700;
+}
+
+.contact-form .form-control:focus {
+    border-color: var(--main);
+    box-shadow: 0 0 0 0.2rem rgba(47, 93, 138, 0.2);
+}
+
+/* =========================================
+   10. Footer
+   ========================================= */
+.footer {
+    padding: 28px 0;
+    color: #fff;
+    background-color: var(--main);
+    font-size: 0.9rem;
+}
+
+.footer a {
+    color: #fff;
+}
+
+/* =========================================
+   11. 반응형
+   ========================================= */
+
+/* 태블릿 이하 (991px 이하): 취미 그리드 2열, 목표 카드가 맨 위 */
+@media (max-width: 991px) {
+    .hobby-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "goal  goal"
+            "movie swim"
+            "like  mind";
+    }
+}
+
+/* 모바일 (767px 이하): Bootstrap md 미만 */
+@media (max-width: 767px) {
+    .section {
+        padding: 56px 0;
+    }
+
+    .hero {
+        padding-top: 110px;
+    }
+
+    .profile-img {
+        width: 160px;
+        height: 160px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .navbar .nav-link {
+        padding: 10px 12px !important;
+    }
+}

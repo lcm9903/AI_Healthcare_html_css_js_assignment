@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이채민 이력서</title>
+
+    <!-- Bootstrap 5 CSS (CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 직접 작성한 CSS (Bootstrap 뒤에 연결해야 덮어쓸 수 있음) -->
+    <link rel="stylesheet" href="resume_style.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="80">
+
+    <!-- ===== Navbar (Bootstrap) ===== -->
+    <nav id="mainNav" class="navbar navbar-expand-md navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand logo" href="#intro">LEE CHAE MIN</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navMenu" aria-controls="navMenu"
+                    aria-expanded="false" aria-label="메뉴 열기">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#intro">Intro</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hobby">Hobby</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#career">Career</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- ===== Self Introduction (Bootstrap Grid: row / col) ===== -->
+        <section id="intro" class="section hero">
+            <div class="container">
+                <div class="row align-items-center g-4">
+                    <div class="col-md-4 text-center">
+                        <img src="profile.jpg" alt="이채민 프로필 사진" class="profile-img">
+                    </div>
+                    <div class="col-md-8 text-center text-md-start">
+                        <p class="eyebrow">Medical AI · Computer Vision · LLM</p>
+                        <h1 class="hero-title">안녕하세요,<br><strong>이채민</strong>입니다.</h1>
+                        <p class="lead text-secondary">
+                            궁금한 건 직접 돌려봐야 직성이 풀리는 ISTP.
+                            성능이 너무 잘 나오면 기뻐하기 전에 데이터 누수부터 의심합니다.
+                        </p>
+                        <div class="d-flex flex-wrap gap-2 justify-content-center justify-content-md-start mb-4">
+                            <span class="badge rounded-pill badge-main">인하대 생명과학과 졸업</span>
+                            <span class="badge rounded-pill badge-main">AI 헬스케어 7기</span>
+                            <span class="badge rounded-pill badge-main">해커톤 1위</span>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2 justify-content-center justify-content-md-start">
+                            <a href="https://github.com/lcm9903" target="_blank" class="btn btn-main rounded-pill px-4">내 Repository 바로가기</a>
+                            <a href="https://velog.io/@lcm9903/posts" target="_blank" class="btn btn-outline-main rounded-pill px-4">Blog</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Skills (CSS Grid: auto-fit) ===== -->
+        <section id="skills" class="section">
+            <div class="container">
+                <h2 class="section-title">Skills</h2>
+                <div class="skill-grid">
+                    <div class="card skill-card">
+                        <div class="card-body">
+                            <h3 class="card-title">🐍 Python &amp; Data</h3>
+                            <p class="card-text">NumPy, Pandas 데이터 처리<br>Matplotlib, Seaborn 시각화</p>
+                        </div>
+                    </div>
+                    <div class="card skill-card">
+                        <div class="card-body">
+                            <h3 class="card-title">🤖 Machine Learning</h3>
+                            <p class="card-text">Scikit-learn, XGBoost, LightGBM<br>Optuna 튜닝 · SHAP 해석</p>
+                        </div>
+                    </div>
+                    <div class="card skill-card">
+                        <div class="card-body">
+                            <h3 class="card-title">🧠 Deep Learning</h3>
+                            <p class="card-text">PyTorch, TensorFlow/Keras<br>CNN 분류 · U-Net 분할</p>
+                        </div>
+                    </div>
+                    <div class="card skill-card">
+                        <div class="card-body">
+                            <h3 class="card-title">👁️ Computer Vision</h3>
+                            <p class="card-text">OpenCV, Image Augmentation<br>안저 · X-ray 영상 전처리</p>
+                        </div>
+                    </div>
+                    <div class="card skill-card">
+                        <div class="card-body">
+                            <h3 class="card-title">💬 NLP &amp; Serving</h3>
+                            <p class="card-text">텍스트 전처리 · LSTM 분류<br>FastAPI 모델 추론 API</p>
+                        </div>
+                    </div>
+                    <div class="card skill-card">
+                        <div class="card-body">
+                            <h3 class="card-title">📊 Biostatistics</h3>
+                            <p class="card-text">t-test, 카이제곱, 회귀분석<br>멘델리안 무작위분석 (MR)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Hobby (CSS Grid: grid-template-areas) ===== -->
+        <section id="hobby" class="section section-alt">
+            <div class="container">
+                <h2 class="section-title">Hobby &amp; Preference</h2>
+                <div class="hobby-grid">
+                    <div class="hobby-item movie">
+                        <span class="emoji">🎬</span>
+                        <h3>취미</h3>
+                        <p>영화 보기</p>
+                    </div>
+                    <div class="hobby-item swim">
+                        <span class="emoji">🏊‍♀️</span>
+                        <h3>특기</h3>
+                        <p>수영하기</p>
+                    </div>
+                    <div class="hobby-item goal">
+                        <span class="emoji">🏥</span>
+                        <h3>목표</h3>
+                        <p>병원에서 "이거 진짜 쓸 만하네" 소리 듣는 헬스케어 AI 만들기</p>
+                    </div>
+                    <div class="hobby-item like">
+                        <span class="emoji">🔍</span>
+                        <h3>좋아하는 일</h3>
+                        <p>모델 결과를 의심하고 데이터 뜯어보기</p>
+                    </div>
+                    <div class="hobby-item mind">
+                        <span class="emoji">💪</span>
+                        <h3>마음가짐</h3>
+                        <p>잘 놀고, 그만큼 잘 일하자!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Career (Bootstrap Table) ===== -->
+        <section id="career" class="section">
+            <div class="container">
+                <h2 class="section-title">Career &amp; Work Experience</h2>
+                <div class="table-responsive career-table">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead>
+                            <tr>
+                                <th scope="col">기관</th>
+                                <th scope="col">역할</th>
+                                <th scope="col">기간</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>오즈코딩스쿨 AI 헬스케어 7기</td>
+                                <td><span class="badge text-bg-light">수강생</span></td>
+                                <td class="text-nowrap">2026</td>
+                            </tr>
+                            <tr>
+                                <td>인하대학교 의과대학 뇌질환연구실</td>
+                                <td><span class="badge text-bg-light">학부연구생</span></td>
+                                <td class="text-nowrap">2025.01~2025.08</td>
+                            </tr>
+                            <tr>
+                                <td>인하대학교 생명과학과 노화연구실</td>
+                                <td><span class="badge text-bg-light">학부연구생</span></td>
+                                <td class="text-nowrap">2021.01~2021.06</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Projects (Bootstrap Grid: row-cols) ===== -->
+        <section id="projects" class="section section-alt">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <div class="col">
+                        <div class="card h-100 project-card">
+                            <div class="card-body">
+                                <span class="badge text-bg-warning mb-2">🏆 1위 · 팀</span>
+                                <h3 class="card-title">난임 환자 임신 성공 확률 예측</h3>
+                                <p class="card-text">Optuna 하이퍼파라미터 튜닝, SHAP 해석 코드 주도, 발표 자료 제작 전담</p>
+                            </div>
+                            <div class="card-footer">XGBoost · Optuna · SHAP</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 project-card">
+                            <div class="card-body">
+                                <span class="badge badge-main mb-2">개인</span>
+                                <h3 class="card-title">U-Net 망막 혈관 분할 · 굴곡도 정량화</h3>
+                                <p class="card-text">안저 영상에서 혈관을 분할하고 혈관 굴곡도(tortuosity)를 정량화</p>
+                            </div>
+                            <div class="card-footer">PyTorch · U-Net · OpenCV</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 project-card">
+                            <div class="card-body">
+                                <span class="badge badge-main mb-2">개인</span>
+                                <h3 class="card-title">흉부 X-ray 폐렴 분류</h3>
+                                <p class="card-text">영상 전처리와 데이터 증강, CNN 분류 모델 구현 및 성능 평가</p>
+                            </div>
+                            <div class="card-footer">PyTorch · CNN</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 project-card">
+                            <div class="card-body">
+                                <span class="badge badge-main mb-2">개인</span>
+                                <h3 class="card-title">DUR 의약품 금기 분석 · 임부금기 판별</h3>
+                                <p class="card-text">데이터 누수를 GroupKFold로 점검하고 Bi-LSTM으로 1등급 판별</p>
+                            </div>
+                            <div class="card-footer">Scikit-learn · Keras · LDA</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Contact (Bootstrap Form) ===== -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">Send Cover Letter</h2>
+                <form class="contact-form row g-3 align-items-end">
+                    <div class="col-md-5">
+                        <label for="email" class="form-label">담당자 이메일</label>
+                        <input type="email" class="form-control" id="email" placeholder="email@example.com" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="company" class="form-label">회사명</label>
+                        <input type="text" class="form-control" id="company" placeholder="(주)Paper Company" required>
+                    </div>
+                    <div class="col-md-3 d-grid">
+                        <button type="submit" class="btn btn-main">이력서 전송하기</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p class="mb-0">© 2026 Lee Chae Min · <a href="https://github.com/lcm9903" target="_blank">GitHub</a></p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (햄버거 메뉴 열고 닫기, 스크롤 시 메뉴 강조에 필요) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
