@@ -1,0 +1,482 @@
+/* =========================================
+   1. 기본 설정
+   ========================================= */
+:root {
+    --main: #2f5d8a;
+    --main-dark: #234a6f;
+    --main-light: #e8f0f7;
+    --text: #222;
+    --text-sub: #666;
+    --bg: #f7f8fa;
+    --line: #e2e5ea;
+    --nav-height: 64px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;                    /* 메뉴 클릭 시 부드럽게 이동 */
+    scroll-padding-top: var(--nav-height);      /* 고정 navbar에 제목이 가리지 않게 */
+}
+
+body {
+    font-family: "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text);
+    background-color: var(--bg);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+/* =========================================
+   2. Navbar (flex)
+   ========================================= */
+.navbar {
+    position: sticky;           /* 스크롤해도 상단에 고정 */
+    top: 0;
+    z-index: 100;
+    background-color: #fff;
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.nav-inner {
+    display: flex;
+    justify-content: space-between;     /* 로고 왼쪽, 메뉴 오른쪽 */
+    align-items: center;                /* 세로 가운데 */
+    max-width: 960px;
+    height: var(--nav-height);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--main);
+}
+
+.nav-menu ul {
+    display: flex;                      /* 메뉴 가로 배치 */
+    gap: 8px;
+}
+
+.nav-menu a {
+    display: block;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    color: var(--text-sub);
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-menu a:hover {
+    background-color: var(--main-light);
+    color: var(--main);
+}
+
+/* 햄버거 버튼과 체크박스는 데스크톱에서 숨김 */
+.menu-toggle,
+.hamburger {
+    display: none;
+}
+
+/* =========================================
+   3. 공통 섹션
+   ========================================= */
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.section {
+    padding: 56px 0 16px;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--main);
+}
+
+hr {
+    border: none;
+    border-top: 2px solid var(--main);
+    margin: 8px 0 28px;
+}
+
+/* =========================================
+   4. Self Introduction (flex: 사진 + 글)
+   ========================================= */
+.intro-wrap {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 32px;
+    background-color: #fff;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+}
+
+.profile-img {
+    flex-shrink: 0;                     /* 화면이 좁아져도 사진은 줄지 않게 */
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    background-color: var(--main-light);
+}
+
+.intro-text {
+    flex: 1;                            /* 남은 공간 모두 차지 */
+}
+
+.greeting {
+    font-size: 19px;
+    margin-bottom: 16px;
+}
+
+.greeting strong {
+    color: var(--main);
+}
+
+.info-list li {
+    display: flex;                      /* 항목명과 값 가로 배치 */
+    padding: 4px 0;
+}
+
+.info-list span {
+    flex: 0 0 96px;                     /* 항목명 칸 너비 고정 */
+    font-weight: 700;
+    color: var(--main);
+}
+
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 8px 20px;
+    border: 2px solid var(--main);
+    border-radius: 999px;
+    font-weight: 700;
+    color: var(--main);
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn:hover,
+.btn-fill {
+    background-color: var(--main);
+    color: #fff;
+}
+
+.btn-fill:hover {
+    background-color: var(--main-dark);
+    border-color: var(--main-dark);
+}
+
+/* =========================================
+   5. Hobby (flex-wrap 카드)
+   ========================================= */
+.hobby-list {
+    display: flex;
+    flex-wrap: wrap;                    /* 넘치면 다음 줄로 */
+    gap: 16px;
+}
+
+.hobby-card {
+    flex: 1 1 160px;                    /* 최소 160px, 남는 공간은 나눠 가짐 */
+    display: flex;
+    flex-direction: column;             /* 카드 안은 세로 배치 */
+    align-items: center;
+    text-align: center;
+    padding: 24px 16px;
+    background-color: #fff;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.hobby-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+}
+
+.emoji {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.hobby-card h3 {
+    font-size: 16px;
+    color: var(--main);
+    margin-bottom: 4px;
+}
+
+.hobby-card p {
+    font-size: 14px;
+    color: var(--text-sub);
+}
+
+/* =========================================
+   6. Career 표
+   ========================================= */
+.table-wrap {
+    overflow-x: auto;                   /* 아주 좁은 화면에서 표만 가로 스크롤 */
+    border: 1px solid var(--line);
+    border-radius: 16px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+th,
+td {
+    padding: 14px 20px;
+    text-align: left;
+    border-bottom: 1px solid var(--line);
+    white-space: nowrap;
+}
+
+th {
+    background-color: var(--main);
+    color: #fff;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f6fa;
+}
+
+tbody tr:hover {
+    background-color: var(--main-light);
+}
+
+/* =========================================
+   7. Send Cover Letter (flex 폼)
+   ========================================= */
+.contact-form {
+    display: flex;
+    align-items: flex-end;              /* 입력칸과 버튼 아래쪽 맞춤 */
+    gap: 16px;
+    padding: 28px;
+    background-color: #fff;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;             /* 라벨 위, 입력칸 아래 */
+    gap: 6px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+input {
+    padding: 11px 14px;
+    font-size: 15px;
+    border: 1px solid #ccd3db;
+    border-radius: 8px;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--main);
+    box-shadow: 0 0 0 3px rgba(47, 93, 138, 0.15);
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    background-color: var(--main);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: var(--main-dark);
+}
+
+/* =========================================
+   8. Footer
+   ========================================= */
+.footer {
+    margin-top: 64px;
+    padding: 28px 24px;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    background-color: var(--main);
+}
+
+.footer a {
+    text-decoration: underline;
+}
+
+/* =========================================
+   9. 반응형 - 태블릿 (768px 이하)
+   ========================================= */
+@media (max-width: 768px) {
+    .intro-wrap {
+        gap: 28px;
+        padding: 24px;
+    }
+
+    .profile-img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .contact-form {
+        flex-direction: column;         /* 폼 세로 배치 */
+        align-items: stretch;
+    }
+}
+
+/* =========================================
+   10. 반응형 - 모바일 (600px 이하)
+   ========================================= */
+@media (max-width: 600px) {
+    .nav-inner,
+    main {
+        padding: 0 16px;
+    }
+
+    /* 햄버거 버튼 보이기 */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+        cursor: pointer;
+    }
+
+    .hamburger span {
+        display: block;
+        height: 3px;
+        background-color: var(--main);
+        border-radius: 2px;
+        transition: transform 0.3s, opacity 0.3s;
+    }
+
+    /* 메뉴는 기본으로 숨기고 아래로 펼쳐지게 */
+    .nav-menu {
+        position: absolute;
+        top: var(--nav-height);
+        left: 0;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        background-color: #fff;
+        border-bottom: 1px solid var(--line);
+        transition: max-height 0.3s ease;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;         /* 메뉴 세로 배치 */
+        gap: 0;
+        padding: 8px 16px;
+    }
+
+    .nav-menu a {
+        padding: 12px;
+    }
+
+    /* 체크박스가 체크되면 메뉴 열기 */
+    .menu-toggle:checked ~ .nav-menu {
+        max-height: 300px;
+    }
+
+    /* 햄버거 → X 모양 */
+    .menu-toggle:checked + .hamburger span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .menu-toggle:checked + .hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle:checked + .hamburger span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .section {
+        padding-top: 40px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    /* 사진 위, 글 아래 */
+    .intro-wrap {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px 20px;
+    }
+
+    .info-list li {
+        flex-direction: column;
+        padding: 6px 0;
+    }
+
+    .info-list span {
+        flex-basis: auto;
+    }
+
+    .btn-group {
+        justify-content: center;
+    }
+
+    /* 취미 카드 2열 */
+    .hobby-card {
+        flex: 1 1 calc(50% - 8px);
+    }
+
+    th,
+    td {
+        padding: 12px 10px;
+        font-size: 14px;
+        white-space: normal;            /* 좁은 화면에서는 줄바꿈 허용 */
+    }
+
+    td:last-child {
+        white-space: nowrap;            /* 기간은 한 줄 유지 */
+    }
+}
